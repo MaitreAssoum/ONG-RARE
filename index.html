@@ -577,7 +577,7 @@ complémentaires polyvalents. Une équipe pluridisciplinaire compétente et
         event.preventDefault();
         grecaptcha.ready(function(){
           grecaptcha.execute("6LfUDvgqAAAAAGyqsjOuLOe2mSLn9ukiv6x9mws3", {action: "submit"}).then(function(token){
-            document.getElementById("g-recapctha-response").value = token;
+            document.getElementById("g-recaptcha-response").value = token;
             event.target.submit();
           });
         });
