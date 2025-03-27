@@ -13,7 +13,7 @@
     <meta name="referrer" content="origin">
     
     
-    
+    <script src = "https://www.google.com/recaptcha/api.js?render=6LfUDvgqAAAAAGyqsjOuLOe2mSLn9ukiv6x9mws3"></script>
     
     
     
@@ -495,13 +495,16 @@ complémentaires polyvalents. Une équipe pluridisciplinaire compétente et
         </div>
       </div>
     </section>
+
+
+
     <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-container-style u-size-xs-60 u-section-8" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" id="sec-2e69">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="custom-expanded u-container-style u-group u-white u-group-1">
           <div class="u-container-layout u-valign-middle u-container-layout-1">
             <h2 class="u-align-center u-text u-text-1">Contactez-nous</h2>
             <div class="custom-expanded u-form u-form-1">
-              <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-13 u-form-vertical u-inner-form" style="padding: 0;" source="email" name="form">
+              <form id="contact-form" action="https://formsubmit.co/rare@ongrare.com" method="POST" class="u-clearfix u-form-spacing-13 u-form-vertical u-inner-form" style="padding: 0;" source="email" name="form">
                 <div class="u-form-email u-form-group u-form-partition-factor-2">
                   <label for="email-f18c" class="u-label">Address</label>
                   <input type="email" placeholder="rare@ongrare.com" id="email-f18c" name="email" class="u-grey-5 u-input u-input-rectangle u-input-1" required="">
@@ -528,18 +531,20 @@ complémentaires polyvalents. Une équipe pluridisciplinaire compétente et
                 </div>
                 <div class="u-align-left u-form-group u-form-submit">
                   <a href="#" class="u-border-none u-btn u-btn-submit u-button-style u-palette-1-base u-btn-1">Soumettre</a>
-                  <input type="submit" value="submit" class="u-form-control-hidden">
                 </div>
                 <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                 <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-                <input type="hidden" value="" name="recaptchaResponse">
-                <input type="hidden" name="formServices" value="2da1cbe5-ca63-b0c6-d871-1b008712075c">
+                <input type="hidden" value="" name="recaptchaResponse" id="g-recaptcha-response">
+                <input type="submit" value="submit" class="u-form-control-hidden">
               </form>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+
+
     <section class="u-clearfix u-grey-light-2 u-typography-custom-page-typography-12--Map u-section-9" id="sec-2d31">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-expanded u-grey-light-2 u-map">
@@ -565,5 +570,18 @@ complémentaires polyvalents. Une équipe pluridisciplinaire compétente et
         </a>
       </p>
     </section>
+
+
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", function(event){
+        event.preventDefault();
+        grecaptcha.ready(function(){
+          grecaptcha.execute("6LfUDvgqAAAAAGyqsjOuLOe2mSLn9ukiv6x9mws3", {action: "submit"}).then(function(token){
+            document.getElementById("g-recapctha-response").value = token;
+            event.target.submit();
+          });
+        });
+      });
+    </script>
   
 </body></html>
